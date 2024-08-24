@@ -1,0 +1,82 @@
+<!--
+Developer: PROTIK DAS UTSO
+Date: 2024-08-18
+Project: Signal Combiner
+Description: This project combines two sets of signals based on time and outputs them in a sorted list. The result is downloadable as a .txt file.
+WhatsApp: +8801883044415
+GitHub: https://github.com/protik-das-utso
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine Signals</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <h1>🔗 Combine Signals</h1>
+
+    <label for="inputA">Input A</label>
+    <textarea id="inputA" placeholder="Paste Input A here..."></textarea>
+
+    <label for="inputB">Input B</label>
+    <textarea id="inputB" placeholder="Paste Input B here..."></textarea>
+
+    <div class="action-buttons">
+        <button id="combineBtn" onclick="combineInputs()"><i class="fas fa-sync-alt"></i>Combine</button>
+        <button id="downloadBtn" onclick="downloadTxtFile()">Download (.txt)</button>
+    </div>
+
+    <div id="result-container">
+        <h2>Combined Result:</h2>
+        <div id="result"></div>
+    </div>
+
+    <!-- Help Icon -->
+    <div class="help-icon">
+        <a href="#" title="Need Help ?" onclick="openHelpPopup()">
+            <img src="https://protik-das-utso.github.io/compare/help.png" alt="Help Icon">
+        </a>
+    </div>
+    <!-- Help Popup -->
+    <div class="modal" id="helpPopup">
+        <div class="modal-content">
+            <span class="close" onclick="closeHelpPopup()">&times;</span>
+            <h2 style="text-align:center">Help & Instructions</h2>
+    
+            <div class="flex-container">
+                <div class="get-now">
+                    <p>Forecast & Previous Value Find</p>
+                    <div>
+                        <a href="./value" target="_blank">
+                            <img src="https://protik-das-utso.github.io/compare/web.png" alt="Telegram Logo" class="telegram-logo">
+                            Get Now
+                        </a>
+                    </div>
+                </div>
+                <div class="telegram-link">
+                    <p>For Username & Password Contact</p>
+                    <div>
+                        <a href="https://t.me/mdnahiduzzamansajeeb" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+                                alt="Telegram Logo" class="telegram-logo">
+                            Contact Admin
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html

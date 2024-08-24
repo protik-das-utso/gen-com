@@ -1,23 +1,17 @@
-// Function to check if the user is logged in
 function checkAuthentication() {
-    const isAuthenticated = sessionStorage.getItem("isAuthenticated");
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
 
     if (!isAuthenticated) {
-        // Store the current page the user is trying to access
-        sessionStorage.setItem("intendedPage", window.location.pathname);
-
-        // Redirect to login page if not authenticated
+        localStorage.setItem("intendedPage", window.location.pathname);
         window.location.href = "../login/index.html";
     }
 }
 
-// Call this function on page load
 window.onload = checkAuthentication;
 
-// Function to log out the user
 function logout() {
-    sessionStorage.removeItem("isAuthenticated");
-    window.location.href = "../login/index.html"; // Redirect to login page after logout
+    localStorage.removeItem("isAuthenticated");
+    window.location.href = "../login/index.html";
 }
 hoje = new Date();
 
@@ -63,10 +57,6 @@ var requestNumber = 0;
 
 //First action when clicking on PROCESS DATA button
 function getHistoric() {
-    
-    
-
-
     $("body").css("cursor", "progress");
     listBestPairTimes = [];
     getParameter();
@@ -378,7 +368,6 @@ function DownloadTxt() {
                 ".txt",
             stringList2
         );
-
     }, 4000); // 4 seconds delay for loading
 }
 

@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    text-align: center;
+    letter-spacing: 2px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+label {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 15px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    height: 28vh;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    resize: none;
+}
+
+textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+    background-color: #f0faff;
+}
+
+button {
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #2ecc71;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+button i {
+    margin-right: 10px;
+    animation: spin 1s infinite linear;
+    color: #ecf0f1;
+}
+
+#result-container {
+    display: none;
+    margin-top: 30px;
+}
+
+#result {
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    font-family: monospace;
+    white-space: pre-wrap;
+    animation: fadeInUp 1s ease-out;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#downloadBtn {
+    display: none;
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+#downloadBtn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Help Icon */
+.help-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.help-icon img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    margin-top: -20px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Flex Container */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.get-now, .telegram-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-now a, .telegram-link a {
+    text-decoration: none;
+    color: #0088cc;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.get-now a:hover, .telegram-link a:hover {
+    color: #005f99;
+    transform: translateY(-5px);
+}
+
+.telegram-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.get-now a:hover .telegram-logo, .telegram-link a:hover .telegram-logo {
+    transform: scale(1.2);
+}
+
+.get-now {
+    margin-right: 10px;
+}
+
+.get-now p {
+    color: red !important;
+}
+
+.telegram-link {
+    margin-left: 10px;
+}
+
+.flex-container p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.get-now div, .telegram-link div {
+    margin-left: 50px;
+    color: #005f99;
+    transform: translateY(-5px);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    textarea {
+        height: 20vh;
+        max-width: 100%;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        padding: 10px 30px;
+        font-size: 1rem;
+    }
+
+    #result {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    textarea {
+        height: 18vh;
+    }
+
+    button {
+        padding: 8px 25px;
+        font-size: 0.9rem;
+    }
+
+    #result {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
