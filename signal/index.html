@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Signal Generator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="./script.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="dashboard-container">
+            <div class="links-container">
+                <div class="link-item">
+                    <div class="wrapper">
+                        <div class="main-form">
+                            <!-- Add ID to form for easy access -->
+                            <form id="signalForm">
+                                <center>
+                                    <h3 style="color:blue;"><b>Signal Generator</b></h3>
+                                    <h5 style="color:gray;"><b>HIGH ACCURACY</b></h5>
+                                </center>
+
+                                <div class="form-group">
+                                    <label for="cbAtivo">Select Pair:</label>
+                                    <select class="form-control" name="cbAtivo" id="cbAtivo" required>
+                                        <option value="" disabled selected>Select Pair</option>
+                                        <option value="0">All PAIR</option>
+                                        <option value="AUD_CAD">AUD_CAD_OTCq</option>
+                                        <option value="AUD_CHF">AUD_CHF_OTCq</option>
+                                        <option value="AUD_JPY">AUD_JPY_OTCq</option>
+                                        <option value="AUD_USD">AUD_USD_OTCq</option>
+                                        <option value="CAD_JPY">CAD_JPY_OTCq</option>
+                                        <option value="EUR_AUD">EUR_AUD_OTCq</option>
+                                        <option value="EUR_CAD">EUR_CAD_OTCq</option>
+                                        <option value="EUR_CHF">EUR_CHF_OTCq</option>
+                                        <option value="EUR_GBP">EUR_GBP_OTCq</option>
+                                        <option value="EUR_JPY">EUR_JPY_OTCq</option>
+                                        <option value="EUR_NZD">EUR_NZD_OTCq</option>
+                                        <option value="EUR_USD">EUR_USD_OTCq</option>
+                                        <option value="USD_MXN">USD_MXN_OTCq</option>
+                                        <option value="GBP_AUD">GBP_AUD_OTCq</option>
+                                        <option value="GBP_CAD">GBP_CAD_OTCq</option>
+                                        <option value="GBP_CHF">GBP_CHF_OTCq</option>
+                                        <option value="GBP_JPY">GBP_JPY_OTCq</option>
+                                        <option value="GBP_NZD">GBP_NZD_OTCq</option>
+                                        <option value="GBP_USD">GBP_USD_OTCq</option>
+                                        <option value="NZD_CHF">NZD_CHF_OTCq</option>
+                                        <option value="NZD_CAD">NZD_CAD_OTCq</option>
+                                        <option value="NZD_JPY">NZD_JPY_OTCq</option>
+                                        <option value="NZD_USD">NZD_USD_OTCq</option>
+                                        <option value="USD_CAD">USD_CAD_OTCq</option>
+                                        <option value="USD_CHF">USD_CHF_OTCq</option>
+                                        <option value="USD_JPY">USD_JPY_OTCq</option>
+                                        <option value="USD_INR">USD_INR_OTCq</option>
+                                        <option value="USD_DKK">USD_DKK_OTCq</option>
+                                        <option value="USD_NOK">USD_NOK_OTCq</option>
+                                        <option value="USD_TRY">USD_TRY_OTCq</option>
+                                        <option value="XAU_USD">XAU_USD_OTCq _ GOLD</option>
+                                        <option value="XAG_USD">XAG_USD_OTCq _ SILVER</option>
+                                        <option value="BTC_USD">BTC_USD_OTCq _ BITCOIN</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selPercentageMin">Minimum percentage:</label>
+                                    <select class="form-control" name="minutos_offset" id="selPercentageMin" required>
+                                        <option value="" disabled selected>Select Minimum Percentage</option>
+                                        <option value="90">90%</option>
+                                        <option value="91">91%</option>
+                                        <option value="92">92%</option>
+                                        <option value="93">93%</option>
+                                        <option value="94">94%</option>
+                                        <option value="95">95%</option>
+                                        <option value="96">96%</option>
+                                        <option value="97">97%</option>
+                                        <option value="98">98%</option>
+                                        <option value="99">99%</option>
+                                        <option value="100">100%</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selPercentageMax">Maximum percentage:</label>
+                                    <select class="form-control" name="minutos_offset" id="selPercentageMax" required>
+                                        <option value="" disabled selected>Select Maximum Percentage</option>
+                                        <option value="90">90%</option>
+                                        <option value="91">91%</option>
+                                        <option value="92">92%</option>
+                                        <option value="93">93%</option>
+                                        <option value="94">94%</option>
+                                        <option value="95">95%</option>
+                                        <option value="96">96%</option>
+                                        <option value="97">97%</option>
+                                        <option value="98">98%</option>
+                                        <option value="99">99%</option>
+                                        <option value="100">100%</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selCandleTime">Expiration date:</label>
+                                    <select class="form-control" name="cbTimeFrame" id="selCandleTime" required>
+                                        <option value="" disabled selected>Select Candle Time</option>
+                                        <option value="M1">M1</option>
+                                        <option value="M4">M2</option>
+                                        <option value="M5" style="color: red;">M5 [HIGH ACCURACY]</option>
+                                        <option value="M15">M15</option>
+                                        <option value="M30">M30</option>
+                                        <option value="H1">H1</option>
+                                        <option value="H2">H2</option>
+                                        <option value="H4">H4</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selDays">Days analyzed:</label>
+                                    <select class="form-control" name="ValuesToCheck" id="selDays" required>
+                                        <option value="" disabled selected>Select Days</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20" style="color: red;">20 [STRONG ACCURACY]</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                        <option value="32">32</option>
+                                        <option value="33">33</option>
+                                        <option value="34">34</option>
+                                        <option value="35">35</option>
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40" style="color: red;">40 [STRONG ACCURACY]</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                        <option value="45">45</option>
+                                        <option value="46">46</option>
+                                        <option value="47">47</option>
+                                        <option value="48">48</option>
+                                        <option value="49">49</option>
+                                        <option value="50" style="color: red;">50 [STRONG ACCURACY]</option>
+                                        <option value="51">51</option>
+                                        <option value="52">52</option>
+                                        <option value="53">53</option>
+                                        <option value="54">54</option>
+                                        <option value="55">55</option>
+                                        <option value="56">56</option>
+                                        <option value="57">57</option>
+                                        <option value="58">58</option>
+                                        <option value="59">59</option>
+                                        <option value="60">60</option>
+                                        <option value="61">61</option>
+                                        <option value="62">62</option>
+                                        <option value="63">63</option>
+                                        <option value="64">64</option>
+                                        <option value="65">65</option>
+                                        <option value="66">66</option>
+                                        <option value="67">67</option>
+                                        <option value="68">68</option>
+                                        <option value="69">69</option>
+                                        <option value="70">70</option>
+                                        <option value="71">71</option>
+                                        <option value="72">72</option>
+                                        <option value="73">73</option>
+                                        <option value="74">74</option>
+                                        <option value="75">75</option>
+                                        <option value="76">76</option>
+                                        <option value="77">77</option>
+                                        <option value="78">78</option>
+                                        <option value="79">79</option>
+                                        <option value="80">80</option>
+                                        <option value="81">81</option>
+                                        <option value="82">82</option>
+                                        <option value="83">83</option>
+                                        <option value="84">84</option>
+                                        <option value="85">85</option>
+                                        <option value="86">86</option>
+                                        <option value="87">87</option>
+                                        <option value="88">88</option>
+                                        <option value="89">89</option>
+                                        <option value="90">90</option>
+                                        <option value="91">91</option>
+                                        <option value="92">92</option>
+                                        <option value="93">93</option>
+                                        <option value="94">94</option>
+                                        <option value="95">95</option>
+                                        <option value="96">96</option>
+                                        <option value="97">97</option>
+                                        <option value="98">98</option>
+                                        <option value="99">99</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="selOrderType">Direction Type:</label>
+                                    <select class="form-control" name="cbTimeFrame" id="selOrderType" required>
+                                        <option value="" disabled selected>Select Direction Type</option>
+                                        <option value="CALL">CALL</option>
+                                        <option value="PUT">PUT</option>
+                                    </select>
+                                </div>
+
+                                <p style="color:red;"><b>NOTICE: All users should learn trading well first, then use
+                                        this generator for good results.</b></p>
+
+                                <!-- Ensure button triggers validation first -->
+                                <button type="button" onclick="validateForm()" class="btn btn-primary btn-lg btn-block">
+                                    GENERATE VIP SIGNAL
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Please Wait<br><br>Signal Generating</p>
+                </div>
+
+                
+
+
+                <!-- Script imports -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+                <!-- Validation Script -->
+                <script>
+                    function validateForm() {
+                        const cbAtivo = document.getElementById('cbAtivo').value;
+                        const selPercentageMin = document.getElementById('selPercentageMin').value;
+                        const selPercentageMax = document.getElementById('selPercentageMax').value;
+                        const selCandleTime = document.getElementById('selCandleTime').value;
+                        const selDays = document.getElementById('selDays').value;
+                        const selOrderType = document.getElementById('selOrderType').value;
+
+                        if (!cbAtivo || !selPercentageMin || !selPercentageMax || !selCandleTime || !selDays || !selOrderType) {
+                            alert("Please fill in all fields before generating the signal.");
+                            return false;
+                        }
+
+                        // Check if Minimum percentage is smaller than Maximum percentage
+                        if (parseInt(selPercentageMin) >= parseInt(selPercentageMax)) {
+                            alert("Minimum percentage must be smaller than Maximum percentage.");
+                            return false;
+                        }
+
+                        getHistoric();
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- Help Icon -->
+    <div class="help-icon">
+        <a href="#" title="Need Help ?" onclick="openHelpPopup()">
+            <img src="../media/img/help.png" alt="Help Icon">
+        </a>
+    </div>
+    <!-- Help Popup -->
+    <div class="modal" id="helpPopup">
+        <div class="modal-content">
+            <span class="close" onclick="closeHelpPopup()">&times;</span>
+            <h2 style="text-align:center">Help & Instructions</h2>
+    
+            <div class="flex-container">
+                <div class="get-now">
+                    <p>Forecast & Previous Value Find</p>
+                    <div>
+                        <a href="./value">
+                            <img src="../media/img/web.png" alt="Telegram Logo" class="telegram-logo">
+                            Get Now
+                        </a>
+                    </div>
+                </div>
+                <div class="telegram-link">
+                    <p>For Username & Password Contact</p>
+                    <div>
+                        <a href="https://t.me/mdnahiduzzamansajeeb" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+                                alt="Telegram Logo" class="telegram-logo">
+                            Contact Admin
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

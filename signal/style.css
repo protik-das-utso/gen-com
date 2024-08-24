@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    max-width: 750px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    color: #2b2e4a;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h3::before {
+    content: "\f0e7";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40px;
+    font-size: 50px;
+    color: #e94560;
+}
+
+h5 {
+    color: #7b7f91;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #f0f0f5;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #f8f8fc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.form-control:focus {
+    border-color: #2b2e4a;
+    outline: none;
+    box-shadow: 0 0 10px rgba(43, 46, 74, 0.2);
+}
+
+.form-group i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cfd8dc;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.form-control:focus + i {
+    color: #2b2e4a;
+}
+
+button {
+    background-color: #e94560;
+    color: #fff;
+    border: none;
+    padding: 18px 36px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 30px;
+    box-shadow: 0 6px 12px rgba(233, 69, 96, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button i {
+    margin-right: 12px;
+}
+
+button:hover {
+    background-color: #d83b55;
+    box-shadow: 0 8px 16px rgba(233, 69, 96, 0.3);
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #c4334f;
+    box-shadow: 0 4px 8px rgba(233, 69, 96, 0.2);
+    transform: translateY(0);
+}
+
+button:focus {
+    outline: none;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+button i,
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Loading Spinner */
+#loading {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+    padding: 20px; /* Add padding only when visible */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow only when visible */
+    background-color: #fff; /* Background color only when visible */
+}
+
+#loading p{
+    text-align: center;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #28a745;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+    margin: 0 auto;
+}
+
+/* Help Icon */
+.help-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.help-icon img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    margin-top: -20px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Flex Container */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.get-now, .telegram-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-now a, .telegram-link a {
+    text-decoration: none;
+    color: #0088cc;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.get-now a:hover, .telegram-link a:hover {
+    color: #005f99;
+    transform: translateY(-5px);
+}
+
+.telegram-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.get-now a:hover .telegram-logo, .telegram-link a:hover .telegram-logo {
+    transform: scale(1.2);
+}
+
+.get-now {
+    margin-right: 10px;
+}
+
+.get-now p {
+    color: red !important;
+}
+
+.telegram-link {
+    margin-left: 10px;
+}
+
+.flex-container p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.get-now div, .telegram-link div {
+    margin-left: 50px;
+    color: #005f99;
+    transform: translateY(-5px);
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
