@@ -1,1 +1,1 @@
-# gen-com
+# generate & combine
